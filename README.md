@@ -1,40 +1,79 @@
-# Fraud-Detection-for-a-leading-Fintech-startup
+# Fraud-Detection-for-a-leading-Fintech-startup(Anomaly Detection)
+
 
 ## Overview
 
-This project detects fraudulent transactions using machine learning on an imbalanced dataset. It applies advanced techniques like SMOTE, threshold tuning, and PR-AUC evaluation for better fraud detection.
+This project detects **potential fraudulent bank transactions** using **unsupervised learning (K-Means clustering)**. It identifies anomalies based on how far transactions deviate from normal behavior.
 
-## Objectives
-- Detect fraudulent transactions
-- Handle class imbalance effectively
-- Compare multiple classification models
-- Optimize decision threshold
+---
 
-## Tech Stack
+##  Objectives
 
-Python, Pandas, NumPy, Scikit-learn, XGBoost, Imbalanced-learn
+* Detect suspicious transactions without labeled data
+* Perform exploratory data analysis (EDA)
+* Identify anomalies using clustering
+* Flag high-risk transactions
 
-## Models Used
-- Random Forest
-- Logistic Regression
-- XGBoost
+---
 
-## Best Model
-XGBoost / Random Forest performed best based on PR-AUC, which is ideal for imbalanced datasets.
+##  Tech Stack
 
-## Key Techniques
-- SMOTE (oversampling minority class)
-- Stratified K-Fold Cross Validation
-- Threshold tuning using F1-score
-- Evaluation using ROC-AUC & PR-AUC
-  
-## Metrics Used
-- ROC-AUC
-- PR-AUC(primary metric) 
-- F1 Score
-- Confusion Matrix
-  
-## Business Impact
-- Detects high-risk transactions
-- Reduces financial fraud losses
-- Improves transaction security systems
+* Python
+* Pandas, NumPy
+* Scikit-learn
+* Matplotlib, Seaborn
+
+---
+
+##  Approach
+
+###  Exploratory Data Analysis
+
+* Analyzed transaction amount distribution
+* Identified outliers and unusual patterns
+* Examined relationships between features
+
+###  Anomaly Detection
+
+* Standardized numerical features
+* One-hot encoded categorical features
+* Applied **K-Means clustering**
+* Used **distance to centroid** to detect anomalies
+
+---
+
+##  Key Technique
+
+* Transactions in the **top 2% distance from cluster centroids** are flagged as potential fraud
+
+---
+
+##  Features Used
+
+* Transaction Amount
+* Account Balance
+* Transaction Duration
+* Login Attempts
+* Customer Age
+* Transaction Type, Channel, Location
+
+---
+
+##  Fraud Insights
+
+* High-value transactions are rare and suspicious
+* Multiple login attempts indicate possible account takeover
+* Large debit transactions may signal unauthorized withdrawals
+* Online transactions show higher fraud risk
+
+---
+
+## Output
+
+* Clustered transactions
+* Distance-based anomaly scores
+* Flagged **potential fraud transactions**
+
+
+
+
